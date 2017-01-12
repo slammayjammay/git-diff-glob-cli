@@ -1,0 +1,29 @@
+{
+  "name": "git-diff-glob-cli",
+  "version": "0.1.0",
+  "description": "An easy way to diff files in the terminal",
+  "main": "bin/gd",
+  "bin": {
+    "gd": "bin/gd",
+    "git-diff-glob": "bin/gd"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "git",
+    "diff",
+    "file",
+    "glob",
+    "terminal"
+  ],
+  "author": "Scott McKenzie",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/slammayjammay/git-diff-glob-cli"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "git-diff-glob": "^0.1.1"
+  }
+}

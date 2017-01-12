@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+
+const join = require('path').join
+const spawnSync = require('child_process').spawnSync
+const GitDiffGlobCli = require(join(__dirname, '../index'))
+
+let args = process.argv.slice(2)
+let options = {
+	pager: true
+}
+
+if (args[0] === 'config') {
+  let action = args[1]
+  let key = args[2]
+  let value = args[3]
+
+  if (action === 'get') {
+    config.get(key)
+  } else if (action === 'set') {
+    config.set(key, value)
+  } else if (typeof action === 'undefined') {
+    config.print()
+  }
+} else {
+  if (args.includes('-n') || args.includes('--no-pager')) {
+    options.pager = false
+  }
+
+  new GitDiffGlobCli(options, args)
+}
