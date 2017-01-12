@@ -7,6 +7,7 @@
     "gd": "bin/gd",
     "git-diff-glob": "bin/gd"
   },
+  "preferGlobal": "true",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,6 +25,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "chalk": "^1.1.3",
     "git-diff-glob": "^0.1.1"
   }
 }
