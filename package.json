@@ -1,6 +1,6 @@
 {
   "name": "git-diff-glob-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An easy way to diff files in the terminal",
   "main": "bin/gd",
   "bin": {
