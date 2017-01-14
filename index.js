@@ -3,6 +3,7 @@ const execSync = require('child_process').execSync
 const spawnSync = require('child_process').spawnSync
 const chalk = require('chalk')
 const gitDiffGlob = require('git-diff-glob')
+const pager = require('node-pager')
 
 class GitDiffGlobCli {
 	constructor(options, args) {
@@ -14,19 +15,10 @@ class GitDiffGlobCli {
 		let diff = gitDiffGlob(args)
 
 		if (options.pager) {
-			this.outputToPager(diff)
+			pager(diff)
 		} else {
-			this.output(diff)
+			console.log(diff)
 		}
-	}
-
-	output(diff) {
-		console.log(diff)
-	}
-
-	outputToPager(diff) {
-		let pager = join(__dirname, './helpers/pager')
-		spawnSync(`${pager}`, [diff], { stdio: 'inherit' })
 	}
 
 	showHelpScreen() {
