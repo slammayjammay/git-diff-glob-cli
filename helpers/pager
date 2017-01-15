@@ -1,4 +1,0 @@
-#!/bin/bash
-
-diff=$1
-echo "$diff" | less -R
