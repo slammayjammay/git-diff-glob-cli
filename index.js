@@ -12,7 +12,7 @@ class GitDiffGlobCli {
 			return
 		}
 
-		let diff = gitDiffGlob(args)
+		let diff = gitDiffGlob(args, { caseInsensitive: options.caseInsensitive })
 
 		if (options.pager) {
 			pager(diff)
