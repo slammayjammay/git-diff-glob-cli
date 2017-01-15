@@ -6,14 +6,18 @@ const GitDiffGlobCli = require(join(__dirname, '../index'))
 
 let args = process.argv.slice(2)
 let options = {
-	pager: true
+	pager: true,
+	caseInsensitive: true
 }
 
-if (args.includes('-n') || args.includes('--no-pager')) {
-  options.pager = false
-}
 if (args.includes('-h') || args.includes('--help')) {
 	options.help = true
 }
+if (args.includes('-n') || args.includes('--no-pager')) {
+  options.pager = false
+}
+if (args.includes('-c') || args.includes('--case-sensitive')) {
+	options.caseInsensitive = false
+}
 
-new GitDiffGlobCli(options, args.join(' '))
+new GitDiffGlobCli(options, args)
