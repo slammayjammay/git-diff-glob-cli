@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
+require('babel-polyfill')
 const join = require('path').join
 const spawnSync = require('child_process').spawnSync
-const GitDiffGlobCli = require(join(__dirname, '../index'))
+const GitDiffGlobCli = require(join(__dirname, '../'))
 
 let args = process.argv.slice(2)
 let options = {
