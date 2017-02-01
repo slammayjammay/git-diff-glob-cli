@@ -3,22 +3,23 @@
 require('babel-polyfill')
 const join = require('path').join
 const spawnSync = require('child_process').spawnSync
+const minimist = require('minimist')
 const GitDiffGlobCli = require(join(__dirname, '../'))
 
-let args = process.argv.slice(2)
-let options = {
-	pager: true,
-	caseInsensitive: true
+const CLI_OPTIONS = ['help', 'caseSensitive', 'pager']
+
+let argv = minimist(process.argv.slice(2), {
+	alias: {
+		h: 'help',
+		c: 'caseSensitive',
+		p: 'pager'
+	},
+	boolean: CLI_OPTIONS
+})
+
+let options = {}
+for (let option of CLI_OPTIONS) {
+	options[option] = argv[option]
 }
 
-if (args.includes('-h') || args.includes('--help')) {
-	options.help = true
-}
-if (args.includes('-n') || args.includes('--no-pager')) {
-  options.pager = false
-}
-if (args.includes('-c') || args.includes('--case-sensitive')) {
-	options.caseInsensitive = false
-}
-
-new GitDiffGlobCli(options, args)
+new GitDiffGlobCli(argv._, options)
