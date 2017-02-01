@@ -8,10 +8,10 @@ $ gd --help
 ```
 
 # Usage
-Provide a list of substrings for files you want the diff of. `git-diff-glob-cli` will get the diff of all files that match the substring and print them to the screen, by default using a pager.
+Provide a list of substrings for files you want the diff of. `git-diff-glob-cli` will get the diff of all files that match the substring (case-insensitively by default) and print them to the screen.
 ```sh
-# grab diff of all files that match 'pack', e.g. `package.json`
-$ gd pack --case-sensitive
-# e.g. all '.html' files
-$ gd --no-pager html
+# grab diff of all files that match 'READ', e.g. `README.md`
+$ gd READ --case-sensitive
+# grab diff of all '.html' files and output into a pager
+$ gd --pager html
 ```

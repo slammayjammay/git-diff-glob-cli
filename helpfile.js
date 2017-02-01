@@ -7,7 +7,7 @@ ${chalk.bold('DESCRIPTION')}
   Print diffs for individual or multiple files. Provide substrings
   of files you want the diff of. All files matching the given
   substrings will be diff-ed and printed to the screen, by default
-  case-insensitive.
+  case-insensitively.
 
 ${chalk.bold('USAGE')}
   gd [options] [path...]
@@ -15,11 +15,11 @@ ${chalk.bold('USAGE')}
 ${chalk.bold('OPTIONS')}
   -c, --case-sensitive    Match substring case-sensitively.
   -h, --help              Display this help screen.
-  -n, --no-pager          Log output onto main screen.
+  -p, --pager             Log output into a pager.
 
 ${chalk.bold('EXAMPLES')}
   gd html
-  gd --no-pager json
+  gd --pager json
 `
 
 execSync(`echo "${text}" > ${outputFile}`)
