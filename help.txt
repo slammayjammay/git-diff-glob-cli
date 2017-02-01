@@ -5,7 +5,7 @@
   case-insensitively.
 
 [1mUSAGE[22m
-  gd [options] [path...]
+  git-diff-glob [options] [path...]
 
 [1mOPTIONS[22m
   -c, --case-sensitive    Match substring case-sensitively.
@@ -13,6 +13,6 @@
   -p, --pager             Log output into a pager.
 
 [1mEXAMPLES[22m
-  gd html
-  gd --pager json
+  git-diff-glob html
+  git-diff-glob --pager json
 

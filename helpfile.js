@@ -10,7 +10,7 @@ ${chalk.bold('DESCRIPTION')}
   case-insensitively.
 
 ${chalk.bold('USAGE')}
-  gd [options] [path...]
+  git-diff-glob [options] [path...]
 
 ${chalk.bold('OPTIONS')}
   -c, --case-sensitive    Match substring case-sensitively.
@@ -18,8 +18,8 @@ ${chalk.bold('OPTIONS')}
   -p, --pager             Log output into a pager.
 
 ${chalk.bold('EXAMPLES')}
-  gd html
-  gd --pager json
+  git-diff-glob html
+  git-diff-glob --pager json
 `
 
 execSync(`echo "${text}" > ${outputFile}`)
