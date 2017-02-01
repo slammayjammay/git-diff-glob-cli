@@ -6,13 +6,19 @@ const gitDiffGlob = require('git-diff-glob')
 const pager = require('node-pager')
 
 class GitDiffGlobCli {
-	constructor(options, args) {
+	/**
+	 * @param {array} args - The list of substrings to match.
+	 * @param {object} options - See help file.
+	 */
+	constructor(args, options) {
 		if (options.help) {
 			this.showHelpScreen()
 			return
 		}
 
-		let diff = gitDiffGlob(args, { caseInsensitive: options.caseInsensitive })
+		let diff = gitDiffGlob(args, {
+			caseSensitive: options.caseSensitive
+		})
 
 		if (options.pager) {
 			pager(diff)
