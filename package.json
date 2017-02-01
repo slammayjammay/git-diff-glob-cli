@@ -4,7 +4,6 @@
   "description": "An easy way to diff files in the terminal",
   "main": "lib/bin/gd",
   "bin": {
-    "gd": "lib/bin/gd.js",
     "git-diff-glob": "lib/bin/gd.js"
   },
   "preferGlobal": "true",
